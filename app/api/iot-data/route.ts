@@ -10,8 +10,8 @@ let lastData = {
   cpuUse: 0,
   wifiRssi: 0,
 };
-// Store up to 14400 historical records (e.g., 1 per second for 4 hours)
-const HISTORY_LIMIT = 14400;
+// Store up to 1000 historical records (e.g., 1 per second for 1000 seconds)
+const HISTORY_LIMIT = 1000;
 let historyData: Array<{
   timestamp: number;
   temperature: number;
