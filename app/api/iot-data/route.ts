@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { createCorsResponse, createOptionsResponse } from '@/lib/cors';
 
 // Simulate a data store
 let lastData = {
@@ -44,14 +45,7 @@ function generateHistoricalData() {
 }
 
 export async function OPTIONS() {
-  return NextResponse.json({}, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
+  return createOptionsResponse();
 }
 
 export async function GET() {
@@ -81,13 +75,7 @@ export async function GET() {
     alert,
   };
 
-  return new NextResponse(JSON.stringify(response), {
-    status: 200,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
-  });
+  return createCorsResponse(response);
 }
 
 export async function POST(request: Request) {
@@ -121,21 +109,9 @@ export async function POST(request: Request) {
     // 新增：数据更新后添加到历史记录
     addToHistory();
 
-    return new NextResponse(JSON.stringify({ message: "Data received successfully!" }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
+    return createCorsResponse({ message: "Data received successfully!" });
   } catch (error) {
     console.error("Error processing POST request:", error);
-    return new NextResponse(JSON.stringify({ message: "Error processing data." }), {
-      status: 400,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
+    return createCorsResponse({ message: "Error processing data." }, 400);
   }
 }
