@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 物联网监控面板
 
-## Getting Started
+这是一个使用 [Next.js](https://nextjs.org/) 构建的项目，提供了一个基于 Web 的物联网设备监控面板。它可以显示实时传感器数据、历史图表，并根据预设阈值发送警报。
 
-First, run the development server:
+## 功能
+
+- **实时数据显示**：显示最新的温度和湿度读数。
+- **历史数据图表**：可视化过去 30 分钟的传感器数据。
+- **警报**：当传感器读数超过特定阈值时通知用户。
+- **深色模式**：支持浅色和深色主题。
+- **响应式设计**：适应不同的屏幕尺寸。
+
+##快速开始
+
+首先，安装依赖项：
+
+```bash
+npm install
+```
+
+然后，运行开发服务器：
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看结果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API 端点
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+该项目包含一个模拟 API 端点，用于模拟物联网数据。
 
-## Learn More
+- **URL**: `/api/iot-data`
+- **方法**: `GET`
+- **描述**: 返回模拟的物联网传感器数据，包括当前读数、历史数据和警报。
 
-To learn more about Next.js, take a look at the following resources:
+### 响应有效载荷
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+  "current": {
+    "temperature": 23.5,
+    "humidity": 45.2,
+    "lastUpdated": "2025-07-01T12:00:00.000Z"
+  },
+  "history": [
+    {
+      "name": "上午11:30",
+      "temperature": 22.1,
+      "humidity": 46.8
+    },
+    {
+      "name": "上午11:35",
+      "temperature": 22.5,
+      "humidity": 46.2
+    }
+  ],
+  "alert": {
+    "type": "warning",
+    "message": "检测到高温！"
+  }
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 了解更多
 
-## Deploy on Vercel
+要了解有关 Next.js 的更多信息，请查看以下资源：
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js 文档](https://nextjs.org/docs) - 了解 Next.js 的功能和 API。
+- [学习 Next.js](https://nextjs.org/learn) - 交互式 Next.js 教程。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+您可以查看 [Next.js GitHub 存储库](https://github.com/vercel/next.js) - 欢迎您的反馈和贡献！
+
+## 在 Vercel 上部署
+
+部署 Next.js 应用程序最简单的方法是使用 Next.js 创建者提供的 [Vercel 平台](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)。
+
+有关更多详细信息，请查看我们的 [Next.js 部署文档](https://nextjs.org/docs/app/building-your-application/deploying)。
