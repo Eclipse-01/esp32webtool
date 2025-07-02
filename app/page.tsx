@@ -411,9 +411,11 @@ export default function Home() {
                                 <LineChart className="w-5 h-5" />
                             </Button>
                         </Link>
-                        <Button variant="ghost" size="icon" className="rounded-lg">
-                            <LayoutGrid className="w-5 h-5" />
-                        </Button>
+                        <Link href="https://spitha.pages.dev" passHref>
+                            <Button variant="ghost" size="icon" className="rounded-lg">
+                                <LayoutGrid className="w-5 h-5" />
+                            </Button>
+                        </Link>
                         <Button variant="ghost" size="icon" className="rounded-lg">
                             <Settings className="w-5 h-5" />
                         </Button>

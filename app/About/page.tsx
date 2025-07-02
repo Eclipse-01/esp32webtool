@@ -102,22 +102,22 @@ const AboutPage = () => {
                         </CardHeader>
                         <CardContent className="flex items-center gap-6">
                             <Avatar className="w-20 h-20">
-                                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
+                                <AvatarImage src="https://resource.flysworld.top/Pics/favicon512.png" alt="Fang Leyang" />
+                                <AvatarFallback>FL</AvatarFallback>
                             </Avatar>
                             <div className="space-y-2">
-                                <h3 className="text-xl font-bold">虚拟开发者</h3>
-                                <p className="text-muted-foreground">全栈工程师 & IoT 爱好者</p>
+                                <h3 className="text-xl font-bold">Fang Leyang</h3>
+                                <p className="text-muted-foreground">江南大学物联网工程学院 物联网工程2302</p>
                                 <div className="flex items-center gap-4 pt-2">
-                                    <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
+                                    <Link href="https://github.com/Eclipse-01" target="_blank" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
                                         <Github className="w-4 h-4" />
                                         GitHub
                                     </Link>
-                                    <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
+                                    <Link href="mailto:1034230231@stu.jiangnan.edu.cn" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
                                         <Mail className="w-4 h-4" />
                                         Email
                                     </Link>
-                                     <Link href="#" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
+                                     <Link href="https://www.flysworld.top/" target="_blank" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
                                         <LinkIcon className="w-4 h-4" />
                                         Website
                                     </Link>
